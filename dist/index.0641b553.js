@@ -560,29 +560,54 @@ function hmrAccept(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-console.log("Hallo daar!");
-async function getCountryInfo() {
-    try {
-        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/name/peru");
-        console.log(result.data);
-    } catch (error) {
-        console.error(error);
-    }
-}
-getCountryInfo();
 async function getCountryList() {
     try {
         const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all?fields=name,flag,population,region");
-        let countryList = result.data;
-        countryList.sort((a, b)=>{
+        let list = result.data;
+        list.sort((a, b)=>{
             return a.population - b.population;
         });
-        console.log(countryList);
+        return list;
     } catch (error) {
         console.error(error);
     }
 }
-getCountryList();
+async function htmlList() {
+    const list = await getCountryList();
+    let cList = document.getElementById("country-list");
+    list.map((countryList)=>{
+        let li = document.createElement("li");
+        li.innerHTML = `<span><img alt= "flag-${countryList.name}" src="${countryList.flag}"/></span><p class="${regionColor(countryList.region)}"> ${countryList.name}</p><p>${countryList.population}</p>`;
+        cList.appendChild(li);
+    });
+}
+htmlList();
+function regionColor(regionName) {
+    switch(regionName){
+        case "Asia":
+            return "red";
+        case "Europe":
+            return "yellow";
+        case "Africa":
+            return "blue";
+        case "Oceania":
+            return "purple";
+        case "Americas":
+            return "green";
+        default:
+            return "default";
+    }
+}
+/*
+Asia red
+Europe yellow
+Africa blue
+Oceania purple
+Americas green
+*/ async function printTest() {
+    console.log(await getCountryList());
+}
+printTest();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
