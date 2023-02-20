@@ -598,10 +598,6 @@ function regionColor(regionName) {
             return "default";
     }
 }
-async function printTest() {
-    console.log(await getCountryList());
-}
-printTest();
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

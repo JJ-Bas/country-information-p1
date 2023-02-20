@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&display=swap');
+
+/*//global//*/
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial;
-    color: #383838;
-}
-
+/*//javascript color selectors//*/
 
 .red {
     color: #d14e5b;
@@ -30,12 +30,32 @@ body {
     color: #a653ba;
 }
 
+/*//body//*/
+
+body {
+    font-family: Arial;
+    color: #383838;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 100px;
+}
+
 h1 {
-    font-stretch: extra-expanded;
+    font-family: 'Mynerve', cursive;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    word-spacing: 20px;
     align-self: center;
     font-size: 80px;
     position: absolute;
-    text-transform: uppercase;
     color: #b0b0b0;
 }
 
@@ -62,11 +82,10 @@ li {
 
 li:hover {
     background-color: white;
-
 }
 
 li div {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     padding: 8px;
 }
 
@@ -78,31 +97,22 @@ li p {
 .flag-image-span {
     position: relative;
     display: flex;
+    justify-content: start;
     height: 30px;
+    width: 56px;
     margin-right: 12px
-
 }
 
 img {
     width: 100%;
 }
 
-
-.outer-container {
-    display: flex;
-    justify-content: center;
-}
-
-.inner-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 100px;
-}
-
 .flag-name {
     display: flex;
     font-size: 20px;
 }
+
+/*//flag-animation//*/
 
 .flag-image-span .flag-enlarge {
     opacity: 0;

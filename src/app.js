@@ -43,11 +43,4 @@ function regionColor(regionName) {
     }
 }
 
-async function printTest() {
-    console.log(await getCountryList())
-}
-
-printTest()
-
-
 
