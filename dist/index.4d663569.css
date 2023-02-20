@@ -1,0 +1,121 @@
+@import "https://fonts.googleapis.com/css2?family=Mynerve&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.red {
+  color: #d14e5b;
+}
+
+.blue {
+  color: #4c824b;
+}
+
+.green {
+  color: #4aa148;
+}
+
+.yellow {
+  color: #e0b12f;
+}
+
+.purple {
+  color: #a653ba;
+}
+
+body {
+  color: #383838;
+  font-family: Arial;
+}
+
+.outer-container {
+  justify-content: center;
+  display: flex;
+}
+
+.inner-container {
+  flex-direction: column;
+  margin: 0 100px;
+  display: flex;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  word-spacing: 20px;
+  color: #b0b0b0;
+  align-self: center;
+  font-family: Mynerve, cursive;
+  font-size: 80px;
+  position: absolute;
+}
+
+ul {
+  height: 9000px;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  flex-flow: column wrap;
+  place-content: space-between;
+  padding: 36px;
+  list-style: none;
+  display: flex;
+}
+
+li {
+  width: 30%;
+  border-radius: 4px;
+  flex-direction: column;
+  margin: 6px 6px 24px;
+  display: flex;
+}
+
+li:hover {
+  background-color: #fff;
+}
+
+li div {
+  margin-bottom: 6px;
+  padding: 8px;
+}
+
+li p {
+  margin-bottom: 4px;
+  margin-left: 8px;
+}
+
+.flag-image-span {
+  height: 30px;
+  width: 56px;
+  justify-content: start;
+  margin-right: 12px;
+  display: flex;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+.flag-name {
+  font-size: 20px;
+  display: flex;
+}
+
+.flag-image-span .flag-enlarge {
+  opacity: 0;
+  z-index: 1;
+  height: 90px;
+  width: 150px;
+  transition: opacity .6s;
+  position: absolute;
+  top: -60px;
+  left: -160px;
+}
+
+.flag-image-span:hover .flag-enlarge {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */
