@@ -577,7 +577,7 @@ async function htmlList() {
     let cList = document.getElementById("country-list");
     list.map((countryList)=>{
         let li = document.createElement("li");
-        li.innerHTML = `<span><img alt= "flag-${countryList.name}" src="${countryList.flag}"/></span><p class="${regionColor(countryList.region)}"> ${countryList.name}</p><p>${countryList.population}</p>`;
+        li.innerHTML = `<div class="flag-name"><span class="flag-image-span"><img class="flag-image" alt= "flag-${countryList.name}" src="${countryList.flag}"/><img class="flag-enlarge" src="${countryList.flag}"/></span><p class="${regionColor(countryList.region)}"> ${countryList.name}</p></div><p>Has a population of ${countryList.population} people</p>`;
         cList.appendChild(li);
     });
 }
@@ -598,13 +598,7 @@ function regionColor(regionName) {
             return "default";
     }
 }
-/*
-Asia red
-Europe yellow
-Africa blue
-Oceania purple
-Americas green
-*/ async function printTest() {
+async function printTest() {
     console.log(await getCountryList());
 }
 printTest();
