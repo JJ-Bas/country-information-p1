@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"lKzq4":[function(require,module,exports) {
+})({"5BJW3":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "fe4256060641b553";
+module.bundle.HMR_BUNDLE_ID = "661844fb7e4883c2";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, globalThis, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -556,49 +556,44 @@ function hmrAccept(bundle, id) {
     });
 }
 
-},{}],"bNKaB":[function(require,module,exports) {
+},{}],"3UGkj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-async function getCountryList() {
+const searchInput = document.getElementById("search-text");
+/*searchInput.addEventListener("keyup",logSearchTerm)*/ /*function logSearchTerm(e){
+    const searchTerm = e.target.value
+    return searchTerm, console.log(searchTerm)
+}*/ const searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", findCountry);
+async function findCountry() {
     try {
-        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all?fields=name,flag,population,region");
-        let list = result.data;
-        list.sort((a, b)=>{
-            return a.population - b.population;
-        });
-        return list;
+        const finalSearchTerm = searchInput.value;
+        const result = await (0, _axiosDefault.default).get(`https://restcountries.com/v2/name/${finalSearchTerm}`);
+        const countryInfo = result.data;
+        const [{ name: name1 , capital , region , languages: [{ name: languagename  }] , population , flags: { png: flagimage  } , currencies: [{ name: currencyName  }]  }] = countryInfo;
+        console.log(name1);
+        console.log(capital);
+        console.log(population);
+        console.log(region);
+        console.log(languagename);
+        console.log(flagimage);
+        console.log(currencyName);
+        displayCountryInfo(countryInfo);
     } catch (error) {
         console.error(error);
     }
 }
-async function htmlList() {
-    const list = await getCountryList();
-    let cList = document.getElementById("country-list");
-    list.map((countryList)=>{
-        let li = document.createElement("li");
-        li.innerHTML = `<div class="flag-name"><span class="flag-image-span"><img class="flag-image" alt= "flag-${countryList.name}" src="${countryList.flag}"/><img class="flag-enlarge" src="${countryList.flag}"/></span><p class="${regionColor(countryList.region)}"> ${countryList.name}</p></div><p>Has a population of ${countryList.population} people</p>`;
-        cList.appendChild(li);
-    });
-}
-htmlList();
-function regionColor(regionName) {
-    switch(regionName){
-        case "Asia":
-            return "red";
-        case "Europe":
-            return "yellow";
-        case "Africa":
-            return "blue";
-        case "Oceania":
-            return "purple";
-        case "Americas":
-            return "green";
-        default:
-            return "default";
-    }
-}
+function displayCountryInfo(data) {
+    let displayItem = document.getElementById("search-display");
+    let li = document.createElement("li");
+    li.innerHTML = `<p>  test ${name} </p>`;
+    displayItem.appendChild(li);
+} /*`<span><img class="flag-image" alt="${countyInfo.name}-flag" src=`${flagimage}`/> <img class="flag-enlarge" src="${flagimage}"/></span><p>${name}</p>
+<p>${name} is situated in ${region}. it has a population of ${population} people.</p>
+<p>the capital is ${capital} and you can pay with ${currencyName}</p>
+<p>The speak ${languagename}</p>`*/ 
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lKzq4","bNKaB"], "bNKaB", "parcelRequirecb08")
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["5BJW3","3UGkj"], "3UGkj", "parcelRequirecb08")
 
-//# sourceMappingURL=index.0641b553.js.map
+//# sourceMappingURL=search.7e4883c2.js.map

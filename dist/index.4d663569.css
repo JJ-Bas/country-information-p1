@@ -104,6 +104,7 @@ img {
 }
 
 .flag-image-span .flag-enlarge {
+  visibility: hidden;
   opacity: 0;
   z-index: 1;
   height: 90px;
@@ -116,6 +117,7 @@ img {
 
 .flag-image-span:hover .flag-enlarge {
   opacity: 1;
+  visibility: visible;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
