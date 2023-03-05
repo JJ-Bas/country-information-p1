@@ -130,3 +130,8 @@ img {
     opacity: 1;
     visibility: visible;
 }
+
+#search-button {
+    width: 50px;
+    height: 50px;
+}
