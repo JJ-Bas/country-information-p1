@@ -52,6 +52,21 @@ h1 {
   position: absolute;
 }
 
+.nav-button {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  background-color: gray;
+  border-radius: 4px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: #00264d;
+}
+
 ul {
   height: 9000px;
   background-color: #f0f0f0;
@@ -120,9 +135,87 @@ img {
   visibility: visible;
 }
 
-#search-button {
-  width: 50px;
-  height: 50px;
+.search-body {
+  background-image: url("pexels-francesco-ungaro-998641.f8e24a7a.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+#search-text {
+  width: 200px;
+  text-align: center;
+  border-style: solid;
+  border-color: #00264d;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+#submit-button {
+  width: 200px;
+  color: #fff;
+  background-color: #00264d;
+  border-style: solid;
+  border-color: #00264d;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+#planet-span {
+  width: 35vw;
+  align-self: center;
+}
+
+#search-display {
+  color: #fff;
+  background-color: #ffffff26;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.flag-name-search {
+  align-items: center;
+  margin: 15px;
+  font-size: 20px;
+  display: flex;
+}
+
+#search-display p {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bottom-text {
+  margin-bottom: 15px;
+}
+
+#c-form {
+  color: #fff;
+  background-color: #ffffff26;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+#error-message {
+  color: #fff;
+  background-color: #ff634766;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#error-message p {
+  text-align: center;
+  margin: 15px;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */
